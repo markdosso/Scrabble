@@ -1,11 +1,22 @@
+import random
+import string
 #Create the bag of letters 
 Scrab_Bag = ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A','B','B','C','C','D', 'D', 'D', 'D', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'F', 'F','G','G','G', 'H', 'H', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I',
 'J', 'K', 'L', 'L', 'L', 'L', 'M', 'M', 'N', 'N', 'N', 'N', 'N', 'N', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'P', 'P', 'Q', 'R', 'R', 'R', 'R', 'R', 'R', 'S', 'S', 'S', 'S', 'T', 'T', 'T', 'T', 'T', 'T',
 'U', 'U', 'U', 'U', 'V', 'V', 'W', 'W', 'X', 'Y', 'Y', 'Z', ' ', ' ']
 #Create a 2D array for the gameboard
-Game_Board = [['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x']
-,['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x']
-,['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x']
-,['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x'],['x','x''x','x''x','x''x','x''x','x''x','x''x','x','x']]
+rows, cols = (15,15)
+arr = [['*']*cols]*rows
+
 #Deal letters to players (doesnt actually have to go to players. just remove them from bag)
+def dealPlayer1(Scrab_Bag):
+    Player1_Bag = ', '.join(random.choice(Scrab_Bag) for x in range(7))
+    return Player1_Bag
+
+def dealPlayer2(Scrab_Bag):
+    Player2_Bag = ', '.join(random.choice(Scrab_Bag) for x in range(7))
+    return Player2_Bag  
+
+Player1_deal = print(dealPlayer1(Scrab_Bag))
+Player2_deal = print(dealPlayer2(Scrab_Bag))
 #Place words on board, and print board
